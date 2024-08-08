@@ -1,3 +1,7 @@
-import utils.HrefExtractor as HrefExtractor
+from utils.HrefExtractor import HrefExtractor
 
-hrefExtractor = HrefExtractor("https://www.ufu.br")
+test = HrefExtractor('https://ufu.com.br')
+print('ORIGIN:\t' + test.url)
+print('HREFs:')
+for href in test.hrefs:
+    print('\t' + href)
