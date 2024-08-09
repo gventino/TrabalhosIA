@@ -20,3 +20,6 @@ class HrefExtractor:
             href = tag.get('href')
             hrefs.add(href)
         return hrefs
+    
+    def toDict(self):
+        return {self.url: self.hrefs}
