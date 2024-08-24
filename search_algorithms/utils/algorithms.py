@@ -1,7 +1,7 @@
 from utils.HrefExtractor import HrefExtractor
 
 # busca em largura:
-def bfs(origin:str, max_it:int) -> list:
+def bfs(origin:str, max_it:int) -> dict:
     graph = {}
     queue = []
     visited = set()
