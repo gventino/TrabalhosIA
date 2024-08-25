@@ -1,6 +1,6 @@
 from pytermgui import InputField, Checkbox, WindowManager, Window, Container, Label
 from utils.Renderer import newGraph
-from utils.FinishMenu import FinishMenu
+from utils.SearchMenu import SearchMenu
 
 class NewGraphMenu:
     def __init__(self):
@@ -95,5 +95,5 @@ class NewGraphMenu:
                 "json": self.checkbox_json.checked,
                 "labels": self.checkbox_labels.checked,
               }
-        newGraph(param)
-        FinishMenu()
+        graph = newGraph(param)
+        SearchMenu(graph)

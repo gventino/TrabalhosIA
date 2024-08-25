@@ -12,7 +12,7 @@ def newGraph(param:dict):
     max_it = param["max_it"]
     graph = bfs(url, int(max_it))
     G = nx.DiGraph(graph)
-    k = 100/sqrt(G.order())
+    k = 100/sqrt(G.order()) if G.order != 0 else 10
     labels = param["labels"]
     
     if param["spring_layout"]:
@@ -38,6 +38,8 @@ def newGraph(param:dict):
         f = open( directory + filename, 'w')
         f.write(str(jasón))
         f.close()
+    
+    return graph
 
 def loadGraph(filename:str):
     directory = './jsons/'
@@ -52,6 +54,7 @@ def loadGraph(filename:str):
     param = data["param"]
     graph = data["graph"]
     
+    url = param["url"]
     labels = param["labels"]
     G = nx.DiGraph(graph)
     k = 100/sqrt(G.order())
@@ -70,3 +73,5 @@ def loadGraph(filename:str):
         pos = nx.kamada_kawai_layout(G)
         nx.draw(G, pos=pos, with_labels=labels)
         plt.show()
+
+    return graph

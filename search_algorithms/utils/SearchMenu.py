@@ -1,10 +1,12 @@
-from utils.Renderer import loadGraph
-from utils.SearchMenu import SearchMenu
 from pytermgui import InputField, WindowManager, Window, Container, Label
+from utils.algorithms import bfsSearch
+from utils.FinishMenu import FinishMenu
 
-class LoadGraphMenu:
-    def __init__(self):
-        self.input_namefile = InputField(".json", prompt="Namefile: ")
+class SearchMenu:
+    def __init__(self, graph):
+        self.input_origin = InputField("https://", prompt="Origin: ")
+        self.input_destination = InputField("https://", prompt="Destination: ")
+        self.graph = graph
 
         with WindowManager() as self.manager:
             self.window = (
@@ -12,7 +14,11 @@ class LoadGraphMenu:
                     Label("[italic 141 bold]Fill the field:"),
                     Container(
                         Container(
-                            self.input_namefile,
+                            self.input_origin,
+                            box="DOUBLE"
+                        ),
+                        Container(
+                            self.input_destination,
                             box="DOUBLE"
                         )
                     ),
@@ -26,5 +32,5 @@ class LoadGraphMenu:
             self.manager.add(self.window)
     
     def __submit(self):
-        graph = loadGraph(self.input_namefile.value)
-        SearchMenu(graph)
+        result = bfsSearch(self.graph, self.input_origin.value, self.input_destination.value)
+        FinishMenu(result)

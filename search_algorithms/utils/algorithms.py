@@ -19,3 +19,20 @@ def bfs(origin:str, max_it:int) -> dict:
         it += 1
         graph.update(node.toDict())
     return graph
+
+def bfsSearch(graph, origin:str, destination:str) -> bool:
+    queue = []
+    visited = set()
+    queue.append(origin)
+    visited.add(origin)
+    while queue:
+        w = queue.pop(0)
+        adj = graph[origin]
+        for u in adj:
+            if u not in visited:
+                if u == destination:
+                    return True
+                visited.add(u)
+                queue.append(u)
+    return False
+
