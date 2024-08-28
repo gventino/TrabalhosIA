@@ -1,0 +1,7 @@
+matplotlib
+requests
+networkx
+scipy
+PyQt6
+beautifulsoup4
+pytermgui
