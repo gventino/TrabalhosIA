@@ -25,13 +25,14 @@ def bfsSearch(graph, origin:str, destination:str) -> bool:
     visited = set()
     queue.append(origin)
     visited.add(origin)
+    
     while queue:
         w = queue.pop(0)
+        if w == destination:
+            return True
         adj = graph[origin]
         for u in adj:
             if u not in visited:
-                if u == destination:
-                    return True
                 visited.add(u)
                 queue.append(u)
     return False

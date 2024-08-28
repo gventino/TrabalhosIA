@@ -38,7 +38,6 @@ def newGraph(param:dict):
         f = open( directory + filename, 'w')
         f.write(str(jasón))
         f.close()
-    
     return graph
 
 def loadGraph(filename:str):
