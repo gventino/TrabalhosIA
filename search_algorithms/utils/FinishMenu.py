@@ -1,7 +1,7 @@
 from pytermgui import WindowManager, Window, Container, Label
 
 class FinishMenu:
-    def __init__(self, found:bool):
+    def __init__(self, found):
         if found:
             self.label = Label("[italic 255 bold green] FOUND") 
         else:

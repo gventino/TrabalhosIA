@@ -18,17 +18,17 @@ def newGraph(param:dict):
     if param["spring_layout"]:
         pos = nx.spring_layout(G, k=k)
         nx.draw(G, pos=pos, with_labels=labels)
-        plt.show()
+        plt.show(block=False)
 
     if param["bfs_layout"]:
         pos = nx.bfs_layout(G, start=url)
         nx.draw(G, pos=pos, with_labels=labels)
-        plt.show()
+        plt.show(block=False)
 
     if param["kk_layout"]:
         pos = nx.kamada_kawai_layout(G)
         nx.draw(G, pos=pos, with_labels=labels)
-        plt.show()
+        plt.show(block=False)
 
     if param["json"]:
         load_json = {"param":param,"graph":graph}
