@@ -14,7 +14,7 @@ def newGraph(param:dict):
     G = nx.DiGraph(graph)
     k = 100/sqrt(G.order()) if G.order != 0 else 10
     labels = param["labels"]
-    
+
     if param["spring_layout"]:
         pos = nx.spring_layout(G, k=k)
         nx.draw(G, pos=pos, with_labels=labels)
@@ -49,10 +49,10 @@ def loadGraph(filename:str):
     except:
         print('Wrong file name, try again!')
         return
-    
+
     param = data["param"]
     graph = data["graph"]
-    
+
     url = param["url"]
     labels = param["labels"]
     G = nx.DiGraph(graph)

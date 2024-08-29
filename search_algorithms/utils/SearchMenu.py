@@ -32,7 +32,6 @@ class SearchMenu:
                 .center()
             )
             self.manager.add(self.window)
-    
 
 
     def __submit(self):
@@ -46,9 +45,9 @@ class SearchMenu:
         start_node = self.input_origin.value
         end_node = self.input_destination.value
         _, (ax1, ax2) = plt.subplots(1, 2)
-        
-    
-        pos_original = nx.spring_layout(self.graph)
+
+
+        pos_original = nx.bfs_layout(self.graph, start_node)
         nx.draw(self.graph, pos_original, ax=ax1, with_labels=True, node_color='lightblue')
         nx.draw_networkx_nodes(result, pos_original, nodelist=[start_node, end_node], node_color='red', node_size=1000, ax=ax1)
         ax1.set_title(f"Original Graph\nNodes: {self.graph.number_of_nodes()}, Edges: {self.graph.number_of_edges()}")
@@ -57,6 +56,6 @@ class SearchMenu:
         nx.draw(result, pos_bfs, ax=ax2, with_labels=True, node_color='lightgreen')
         nx.draw_networkx_nodes(result, pos_bfs, nodelist=[start_node, end_node], node_color='red', node_size=1000, ax=ax2)
         ax2.set_title(f"BFS Tree\nNodes: {result.number_of_nodes()}, Edges: {result.number_of_edges()}")
-        
+
         plt.tight_layout()
         plt.show()
