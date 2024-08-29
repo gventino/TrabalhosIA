@@ -39,7 +39,7 @@ class SearchMenu:
         result = bfsSearch(self.graph, self.input_origin.value, self.input_destination.value)
         if result:
             self.__plot_path(result)
-        FinishMenu(result.size() > 0)
+        FinishMenu(len(result) > 0)
 
 
     def __plot_path(self, result):
