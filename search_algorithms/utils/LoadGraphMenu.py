@@ -1,7 +1,9 @@
 from utils.Renderer import loadGraph
 from utils.SearchMenu import SearchMenu
 from pytermgui import InputField, WindowManager, Window, Container, Label
-
+# Menu para carregar um grafo salvo num .json
+# dado o nome do arquivo, ele busca na pasta jsons/
+# abre o json, plota e passa pra ferramenta de busca
 class LoadGraphMenu:
     def __init__(self):
         self.input_namefile = InputField(".json", prompt="Namefile: ")
@@ -27,4 +29,5 @@ class LoadGraphMenu:
     
     def __submit(self):
         graph = loadGraph(self.input_namefile.value)
-        SearchMenu(graph)
+        if graph != None:
+            SearchMenu(graph)

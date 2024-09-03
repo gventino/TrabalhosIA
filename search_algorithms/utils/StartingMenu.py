@@ -2,6 +2,8 @@ from utils.NewGraphMenu import NewGraphMenu
 from utils.LoadGraphMenu import LoadGraphMenu
 from pytermgui import Checkbox, WindowManager, Window, Container, Label
 
+# Menu de inicio, este menu pergunta ao usuario se ele deseja criar um novo grafo
+# ou se ele deseja carregar um grafo salvo
 class StartingMenu:
     def __init__(self):
         #checkboxes:

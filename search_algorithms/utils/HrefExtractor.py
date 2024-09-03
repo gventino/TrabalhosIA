@@ -2,6 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
+# classe principal, dado o url de uma pagina web constroi um objeto (vertice do grafo)
+# ele baixa o html do url passado, procura pelas tags a com campos href comecando com 
+# https:// e bota na lista de adjacencia do vertice (hrefs)
 class HrefExtractor:
     def __init__(self, url:str):
         self.url = url

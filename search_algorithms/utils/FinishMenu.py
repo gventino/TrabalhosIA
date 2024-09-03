@@ -1,5 +1,5 @@
 from pytermgui import WindowManager, Window, Container, Label
-
+# Menu final, recebe se houve caminho da origem para o destino, e mostra se ha ou nao caminho.
 class FinishMenu:
     def __init__(self, found):
         if found:

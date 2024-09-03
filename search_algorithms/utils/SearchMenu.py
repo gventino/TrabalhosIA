@@ -4,6 +4,8 @@ from utils.FinishMenu import FinishMenu
 import networkx as nx
 import matplotlib.pyplot as plt
 
+# Menu de busca, este menu pede pelo url do vertice de origem e o url do vertice de destino
+# ele passa estes dados e o grafo para a funcao de busca em largura (bfs)
 class SearchMenu:
     def __init__(self, graph):
         self.input_origin = InputField("https://", prompt="Origin: ")

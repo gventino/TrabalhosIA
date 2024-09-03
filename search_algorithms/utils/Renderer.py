@@ -7,6 +7,10 @@ import json
 from math import sqrt
 matplotlib.use('QtAgg')
 
+# Esta funcao recebe os parametros preenchidos no formulario do NewGraphMenu,
+# com estes parametros ele gera a estrutura de grafo propriamente dita,
+# faz o plot do grafo, e se necessario salva
+# apos isso retorna o grafo
 def newGraph(param:dict):
     url = param["url"]
     max_it = param["max_it"]
@@ -40,6 +44,9 @@ def newGraph(param:dict):
         f.close()
     return graph
 
+# Esta funcao carrega o grafo a partir do nome do arquivo,
+# o uma vez que o arquivo eh carregado o grafo eh plotado
+# e retornado
 def loadGraph(filename:str):
     directory = './jsons/'
     try:
@@ -48,7 +55,7 @@ def loadGraph(filename:str):
         f.close()
     except:
         print('Wrong file name, try again!')
-        return
+        return None
 
     param = data["param"]
     graph = data["graph"]

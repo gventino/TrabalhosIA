@@ -2,6 +2,8 @@ from pytermgui import InputField, Checkbox, WindowManager, Window, Container, La
 from utils.Renderer import newGraph
 from utils.SearchMenu import SearchMenu
 
+# Menu de criacao de grafo, eh um formulario com todos os dados necessarios para montar um grafo novo
+# isto engloba: url da origem, max_it, visualizacoes do plot, opcao de labels, opcao de salvar o grafo
 class NewGraphMenu:
     def __init__(self):
         #input fields:
