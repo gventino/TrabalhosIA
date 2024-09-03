@@ -2,7 +2,7 @@ from utils.HrefExtractor import HrefExtractor
 import networkx as nx
 
 # busca em largura:
-def bfs(origin:str, max_it:int) -> dict:
+def generateGraph(origin:str, max_it:int) -> dict:
     graph = {}
     queue = []
     visited = set()
@@ -21,7 +21,7 @@ def bfs(origin:str, max_it:int) -> dict:
         graph.update(node.toDict())
     return graph
 
-def bfsSearch(graph, origin:str, destination:str) -> nx.DiGraph:
+def bfs(graph, origin:str, destination:str) -> nx.DiGraph:
     queue = []
     visited = set()
     queue.append(origin)

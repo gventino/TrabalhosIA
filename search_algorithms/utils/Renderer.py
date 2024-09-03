@@ -1,5 +1,5 @@
 from utils.HrefExtractor import HrefExtractor
-from utils.algorithms import bfs
+from utils.algorithms import generateGraph
 import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib
@@ -10,7 +10,7 @@ matplotlib.use('QtAgg')
 def newGraph(param:dict):
     url = param["url"]
     max_it = param["max_it"]
-    graph = bfs(url, int(max_it))
+    graph = generateGraph(url, int(max_it))
     G = nx.DiGraph(graph)
     k = 100/sqrt(G.order()) if G.order != 0 else 10
     labels = param["labels"]

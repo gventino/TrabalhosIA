@@ -1,5 +1,5 @@
 from pytermgui import InputField, WindowManager, Window, Container, Label
-from utils.algorithms import bfsSearch
+from utils.algorithms import bfs
 from utils.FinishMenu import FinishMenu
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -35,7 +35,7 @@ class SearchMenu:
 
 
     def __submit(self):
-        result = bfsSearch(self.graph, self.input_origin.value, self.input_destination.value)
+        result = bfs(self.graph, self.input_origin.value, self.input_destination.value)
         if result:
             self.__plot_path(result)
         FinishMenu(len(result) > 0)
