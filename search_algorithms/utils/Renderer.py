@@ -67,12 +67,12 @@ def loadGraph(filename:str):
 
     if param["spring_layout"]:
         pos = nx.spring_layout(G, k=k)
-        nx.draw(G, with_labels=labels)
+        nx.draw(G, pos=pos, with_labels=labels)
         plt.show()
 
     if param["bfs_layout"]:
         pos = nx.bfs_layout(G, start=url)
-        nx.draw(G, with_labels=labels)
+        nx.draw(G, pos=pos, with_labels=labels)
         plt.show()
 
     if param["kk_layout"]:
