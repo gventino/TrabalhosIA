@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import seaborn as sns
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
@@ -52,7 +51,7 @@ for k in k_values:
     scores.append(np.mean(score))
 
 # Plot k_value X score
-sns.lineplot(x = k_values, y = scores, marker = 'o')
+plt.plot(x = k_values, y = scores, marker = 'o')
 plt.xlabel("K Values")
 plt.ylabel("Accuracy Score")
 
@@ -74,5 +73,3 @@ recall = recall_score(y_test, y_pred)
 print("Accuracy:", accuracy)
 print("Precision:", precision)
 print("Recall:", recall)
-
-plt.show()
